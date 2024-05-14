@@ -1,2 +1,7 @@
 .env
 __pycache__
+Lib
+Scripts
+share
+include
+pyvenv.cfg
