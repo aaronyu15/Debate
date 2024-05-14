@@ -19,7 +19,7 @@ messages = []
 # Create the Gradio interface
 with gr.Blocks() as demo:
     
-    chatbot = gr.Chatbot(height=800, elem_id="chatbotbox", show_share_button=True, show_copy_button=True)
+    chatbot = gr.Chatbot(height=1200, elem_id="chatbotbox", show_share_button=True, show_copy_button=True)
     
     chat_history_state = gr.State([])  # State to hold the chat history
 
@@ -53,7 +53,7 @@ with gr.Blocks() as demo:
                 messages.append(new_text)
 
                 # Generate response
-                response = ollama.chat(model='phi3', messages=messages, stream=True)
+                response = ollama.chat(model='phi3', messages=messages, stream=True, options={'num_ctx':10000})
                 response_str = ""
 
                 # Print to terminal (Optional)

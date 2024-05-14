@@ -35,7 +35,7 @@ while True:
     messages.append(new_text)
 
     # Generate response
-    response = ollama.chat(model='phi3', messages=messages, stream=True)
+    response = ollama.chat(model='phi3', messages=messages, stream=True, options={'num_ctx':10000})
     response_str = ""
 
     print("\nClient:")
